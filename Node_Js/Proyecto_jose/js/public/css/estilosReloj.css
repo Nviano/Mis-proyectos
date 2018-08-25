@@ -1,0 +1,9 @@
+.clock {
+    color: black;
+    font-family: Verdana, Arial, Helvetica;
+    text-align: center;
+    background-color: rgba(97, 98, 110, 0.4);
+    border-color: transparent;
+    font-size: 36px;
+    height: 100px;
+}

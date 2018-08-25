@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="js/lib/jquery_ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="js/lib/jquery_ui/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="js/lib/jquery_ui/jquery-ui.theme.min.css">
+    <script src="js/lib/jquery_ui/jquery-ui.min.js"></script>
+    <link type="text/javascript" src="/js/lib/popper.min.js" charset="utf-8"></link>
+    <link type="text/javascript" src="js/lib/bootstrap.min.js" charset="utf-8"></link>
+    <link type="text/javascript" src="js/reloj.js" charset="utf-8"></link>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="../js/formulario.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css" rel="stylesheet" type="text/css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+
+    <title>load control</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="row">
+            <div class="col perfil mt-5">
+                Modifica tu perfil
+            </div>
+        </header>
+    </div>
+
+
+    <!-- Formulario de los jugadores -->
+    <div class="col change mt-5">
+        <form id="formularioplayer">
+            <div class="form-row justify-content-center">
+
+                <div class="form-group col-md-2">
+                    <label for="inputEmail4">Nombre</label>
+                    <input type="text" class="form-control" id="nombreplayer" name="nombre" data-validation="custom" data-validation-regexp="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" data-validation-length="min3"
+                        placeholder="Introduce Nombre" value="<%= resultado[0].nombre%>"></input>
+                </div>
+
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Primer Apellido</label>
+                    <input type="text" class="form-control" id="apellido1player" name="apellido1" value="<%= resultado[0].apellido1%>" data-validation="required alphanumeric" placeholder="Introduce tu primer apellido"></input>
+                </div>
+
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Segundo Apellido</label>
+                    <input type="text" class="form-control" id="apellido2player" name="apellido2" value="<%= resultado[0].apellido2%>" data-validation-regexp="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}"
+                        placeholder="Introduce tu segundo apellido"></input>
+                </div>
+
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Teléfono</label>
+                    <input type="text" class="form-control" id="telefonoplayer" name="telefono" value="<%= resultado[0].telefono%>" data-validation="required number" placeholder="Introduce tu numero de teléfono"></input>
+                </div>
+            </div>
+            <div class="form-row justify-content-center">
+                <div class="form-group col-md-2">
+                    <label for="inputEmail4">Email</label>
+                    <input type="text" class="form-control" id="emailplayer" name="email" value="<%= resultado[0].email%>" data-validation="required email" placeholder="Introduce Email"></input>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Contraseña</label>
+                    <input type="password" class="form-control" id="passwordplayer" name="password_confirmation" value="<%= resultado[0].password%>" data-validation="length" data-validation-length="min8" placeholder="Introduce contraseña"></input>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Confirma contraseña</label>
+                    <input type="password" class="form-control" id="confirmaplayer" name="password" value="<%= resultado[0].password%>" data-validation="confirmation" placeholder="Confirma contraseña"></input>
+                </div>
+                <div class="form-group col-md-2 ">
+                    <label for="inputPassword4">Pais</label>
+                    <input type="text" class="form-control" id="paisplayer" value="<%= resultado[0].pais%>" name="pais" data-validation="custom" data-validation-regexp="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}"
+                        data-validation-length="min3" placeholder="Introduce Pais"></input>
+                </div>
+            </div>
+            <div class="form-row justify-content-center">
+
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Altura</label>
+                    <input type="text" class="form-control" id="altura" value="<%= resultado[0].altura%>" name="altura" data-validation="required alphanumeric" placeholder="Introduce Altura en cm"></input>
+                </div>
+
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Peso</label>
+                    <input type="text" class="form-control" name="peso" value="<%= resultado[0].peso%>" data-validation="required alphanumeric" placeholder="Introduce Peso en Kg"></input>
+                    <input type="hidden" value="<%= resultado[0].IdJugador%>" name="IdJugador">
+                </div>
+                <div class="form-group col-md-2">
+                    <button type="button" class="btn btn-primary" id="modificaplayer">Modificar</button>
+                </div>
+            </div>
+
+
+
+
+    </div>
+
+
+    </form>
+    </div>
+
+
+
+</body>
+
+</html>

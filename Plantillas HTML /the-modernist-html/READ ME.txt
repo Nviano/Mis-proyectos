@@ -1,0 +1,19 @@
+
+
+HINT 1:
+
+The color convertor can be used to convert a color in Hexadecimal, RGB, RGBA, HSL, HSLA or a color name to other formats.
+
+http://projects.korrelboom.com/color-convertor/
+
+
+
+
+HINT 2:
+
+
+RGBa & HSLa Converter to generate specific CSS for Internet Explorer
+
+http://kimili.com/journal/rgba-hsla-css-generator-for-internet-explorer/
+
+

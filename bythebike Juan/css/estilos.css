@@ -1,0 +1,777 @@
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Montserrat', sans-serif;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    #container-home {
+        margin: 0% auto;
+        text-align: center;
+        background-color: rgba(0, 174, 239, 0.5);
+        height: 100vh;
+        color: #FFF;
+        position: relative;
+    }
+    
+    #container-home .fondo {
+        background-image: none;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100vh;
+    }
+    
+    #container-home .fondo video {
+        display: block;
+        widht: 100%;
+        z-index: -1;
+    }
+    
+    @media (max-width:768px) {
+        #container-home .fondo {
+            background-image: url('../images/fondo-inicio.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+        }
+        #container-home .fondo video {
+            display: none;
+        }
+    }
+    
+    #container-home h1 {
+        padding-top: 8%;
+        margin: 0 0 5px 0;
+        color: #FFF;
+        font-weight: 700;
+        font-size: 4rem;
+    }
+    
+    #container-home p {
+        font-size: 1.2rem
+    }
+    
+    #container-home img {
+        width: 280px;
+        margin: 30px 0px;
+    }
+    
+    #container-home .logo-amimado {
+        position: relative;
+    }
+    
+    #container-home .logo-amimado img.rueda1 {
+        width: 120px;
+        position: relative;
+        left: 120px;
+        animation-name: rodar;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    
+    #container-home .logo-amimado img.cuadro {
+        width: 280px;
+        margin: 30px 0px;
+    }
+    
+    #container-home .logo-amimado img.rueda2 {
+        width: 120px;
+        position: relative;
+        left: -120px;
+        animation-name: rodar;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    
+    @keyframes rodar {
+        from {
+            transform: rotate(0deg)
+        }
+        to {
+            transform: rotate(360deg)
+        }
+    }
+    
+    #container-home select {
+        padding: 3px 8px;
+        font-size: 1.1rem;
+        border: 1px solid #006494;
+        background-color: #FFF;
+        color: #02182B;
+        font-weight: 300;
+    }
+    
+    #container-home button {
+        background-color: #D7263D;
+        padding: 4px 8px;
+        font-size: 1.1rem;
+        border: 1px solid #00AEEF;
+        color: #FFF;
+    }
+    
+    #container-home label {
+        font-size: 1.5rem;
+        display: block;
+        margin-bottom: 16px;
+    }
+    
+    #header {
+        background-color: #00AEEF;
+        overflow: auto;
+        padding: 20px 80px 20px 80px;
+    }
+    
+    #header #brand {
+        float: left;
+        width: 30%;
+    }
+    
+    #header #brand img {
+        display: block;
+        width: 75px;
+        margin-left: 25px;
+        margin-bottom: 5px;
+    }
+    
+    #header #brand a {
+        display: block;
+        font-size: 1.3rem;
+        color: #FFF;
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+    
+    #header #brand a span {
+        display: block;
+        /*letter-spacing: 0.5px;*/
+    }
+    
+    #header #nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        float: right;
+    }
+    
+    #header #nav ul li {
+        display: inline-block;
+        padding: 22px 12px;
+    }
+    
+    #header #nav ul li a {
+        color: #FFF;
+        font-weight: 400;
+        text-decoration: none;
+    }
+    
+    #main {
+        margin-right: auto;
+        margin-left: auto;
+        width: 1080px;
+        max-width: 1080px;
+    }
+    
+    #slider-ciudad {
+        background-image: url("../images/alquiler-bicicletas-malaga.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        height: 300px;
+        position: relative;
+    }
+    
+    #slider-ciudad h1 {
+        margin: 0 0;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.38);
+        height: 100%;
+        padding-top: 100px;
+        font-size: 3.8rem;
+        color: #02182B;
+        letter-spacing: -0.1rem;
+        font-weight: 300;
+        box-sizing: border-box;
+    }
+    
+    #slider-ciudad .degradado-left {
+        /*	position: absolute;
+	left: 0;
+	bottom: 0px;
+	background: radial-gradient(closest-side at 60% 55%, #fff,rgba(255,255,255,0.5) );
+	width:50%;
+	height: 30%;*/
+    }
+    
+    #lista-bicicletas {
+        margin: 60px auto;
+    }
+    
+    #lista-bicicletas h2 {
+        text-align: center;
+        color: #006494;
+        font-size: 2rem;
+        margin: 20px 0px 40px 0px;
+    }
+    
+    #lista-bicicletas table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0px;
+    }
+    
+    #lista-bicicletas table th {
+        background-color: #D7263D;
+        color: #FFF;
+        text-align: left;
+        padding: 18px 14px;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        font-size: 1.2rem;
+    }
+    
+    #lista-bicicletas table td {
+        font-size: 1.2rem;
+        padding: 24px 14px;
+        color: #0a0a0a;
+    }
+    
+    #lista-bicicletas table tr {
+        background-color: #efefef;
+    }
+    
+    #lista-bicicletas table tr:nth-child(1) {
+        background-color: #efefef;
+    }
+    
+    #lista-bicicletas table tr:nth-child(2n) {
+        background-color: #fff;
+    }
+    
+    #lista-bicicletas table td.direccion {
+        font-size: 0.95rem;
+        color: #333;
+    }
+    
+    #lista-bicicletas table td.solo {
+        color: #D7263D;
+        font-weight: 700;
+    }
+    
+    .#lista-bicicletas table td.reservar {
+        vertical-align: middle;
+        text-align: center;
+    }
+    
+    #lista-bicicletas table td.reservar a {
+        color: #02182B;
+        text-decoration: none;
+    }
+    
+    #lista-bicicletas table td.reservar i {
+        vertical-align: middle;
+        font-size: 1.6rem;
+    }
+    
+    #footer {
+        background-color: #333;
+        margin-top: 100px;
+        overflow: auto;
+        clear: both;
+    }
+    
+    #footer .contenedor-menu {
+        padding: 60px 40px;
+        overflow: auto;
+    }
+    
+    #footer .menu {
+        float: left;
+        width: 25%;
+    }
+    
+    #footer .menu .titulo {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #ccc;
+    }
+    
+    #footer .menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    #footer .menu ul li {
+        padding-top: 18px;
+    }
+    
+    #footer .menu ul li a {
+        color: #999;
+        text-decoration: none;
+    }
+    
+    #footer .brand {
+        height: 80px;
+        padding: 30px 40px 20px 40px;
+        background-color: #212020;
+        overflow: auto;
+        clear: both;
+    }
+    
+    #footer .brand .left {
+        float: left;
+    }
+    
+    #footer .brand .left img {
+        width: 50px;
+        vertical-align: middle;
+        margin-right: 14px;
+    }
+    
+    #footer .brand .left span {
+        color: #999;
+    }
+    
+    #footer .brand .right {
+        float: right;
+    }
+    
+    #footer .brand ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    #footer .brand ul li {
+        display: inline;
+        margin-left: 14px;
+    }
+    
+    #footer .brand ul li a {
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        border: none;
+        background-color: #999;
+        color: #333;
+        text-align: center;
+        padding: 6px 0px;
+    }
+    
+    #contenedor-rutas {
+        margin-right: auto;
+        margin-left: auto;
+        width: 100%;
+        background-color: #efefef;
+        overflow: auto;
+    }
+    
+    #contenedor-rutas h3 {
+        text-align: center;
+        margin: 80px 10px 40px 10px;
+    }
+    
+    #contenedor-rutas .row-rutas {
+        width: 1080px;
+        margin: 0 auto;
+        clear: both;
+        padding: 60px 10px;
+        overflow: auto;
+    }
+    
+    #contenedor-rutas .row-rutas .col-ruta {
+        width: 31%;
+        float: left;
+        background-color: #FFF;
+        text-align: center;
+        position: relative;
+        padding-bottom: 24px;
+        margin-left: 1.05%;
+        margin-right: 1.05%;
+    }
+    
+    #contenedor-rutas .row-rutas .col-ruta .detalle {
+        text-align: left;
+        background-color: #02182B;
+        padding: 10px 8px;
+        overflow: auto;
+    }
+    
+    #contenedor-rutas .row-rutas .col-ruta .detalle span {
+        width: 33.3%;
+        display: block;
+        color: #FFF;
+        float: left;
+        text-align: center;
+        font-weight: 300;
+    }
+    
+    #contenedor-rutas .row-rutas .col-ruta img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    #contenedor-rutas .row-rutas .col-ruta p {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding: 5px 8px;
+    }
+    
+    #contenedor-rutas .row-rutas .col-ruta a {
+        text-align: center;
+        display: inline-block;
+        background-color: #D7263D;
+        color: #FFF;
+        padding: 10px 20px;
+        margin: 20px 5px;
+        margin-left: auto;
+        margin-right: auto;
+        text-decoration: none;
+    }
+    /****** Maquetación formulario de login */
+    
+    #header-login,
+    #main-login {
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    #header-login {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    
+    #header-login img {
+        width: 100px;
+        height: auto;
+    }
+    
+    #header-login h1 {
+        color: #02182B;
+    }
+    
+    #main-login .login-facebook {
+        display: block;
+        background-color: #4c66a4;
+        color: #FFF;
+        padding: 13px 13px;
+        border: none;
+        border-radius: 3px;
+        width: 100%;
+        font-size: 1rem;
+    }
+    
+    .contenedor-form {
+        text-align: left;
+    }
+    
+    .contenedor-form .label {
+        margin-bottom: 8px;
+    }
+    
+    .contenedor-form .input {
+        margin-bottom: 24px;
+    }
+    
+    .contenedor-form input {
+        display: block;
+        background-color: #FFF;
+        color: #333;
+        border: 1px solid #999999;
+        ;
+        border-radius: 3px;
+        width: 100%;
+        height: 40px;
+        padding: 6px 12px;
+    }
+    
+    #main-login .entrar {
+        display: block;
+        background-color: #D7263D;
+        color: #FFF;
+        padding: 13px 13px;
+        border: none;
+        border-radius: 3px;
+        width: 100%;
+        font-size: 1rem;
+    }
+    
+    #main-login .cuenta {
+        margin-top: 40px;
+    }
+    
+    #main-login .cuenta a {
+        color: #02182B;
+    }
+    /****** Maquetación formulario de registro */
+    
+    #registro {
+        height: 100vh;
+    }
+    
+    #registro .left {
+        width: 40%;
+        height: 100%;
+        float: left;
+        background-image: url("../images/image-registro.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right top;
+        color: #FFF;
+        padding: 40px 40px;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    
+    #registro .left img {
+        width: 90px;
+    }
+    
+    #registro .left h1 {
+        font-size: 2.8rem;
+        margin-top: 110px;
+    }
+    
+    #registro .left p {
+        font-size: 1.3rem;
+    }
+    
+    #registro .right {
+        width: 60%;
+        height: 100%;
+        float: right;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    
+    #main-registro {
+        text-align: center;
+    }
+    
+    #header-registro {
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    #header-registro {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    
+    #header-registro h1 {
+        color: #02182B;
+    }
+    
+    #main-registro .login-facebook {
+        display: block;
+        background-color: #4c66a4;
+        color: #FFF;
+        padding: 13px 13px;
+        border: none;
+        border-radius: 3px;
+        width: 100%;
+        font-size: 1rem;
+    }
+    
+    #main-registro .entrar {
+        display: block;
+        background-color: #D7263D;
+        color: #FFF;
+        padding: 13px 13px;
+        border: none;
+        border-radius: 3px;
+        width: 100%;
+        font-size: 1rem;
+    }
+    
+    #header-registro a {
+        color: #02182B;
+    }
+    
+    #datos-reserva {
+        float: left;
+        width: 30%;
+    }
+    
+    #datos-reserva h1 {
+        font-size: 2rem;
+        text-transform: uppercase;
+        margin-top: 0;
+    }
+    
+    #datos-reserva .numero {
+        display: block;
+        background-color: #FFF;
+        color: #333;
+        border: 1px solid #999999;
+        ;
+        border-radius: 3px;
+        width: 30%;
+        height: 40px;
+        padding: 6px 12px;
+        font-size: 1rem;
+    }
+    
+    #datos-reserva .reservar {
+        display: block;
+        background-color: #D7263D;
+        color: #FFF;
+        padding: 13px 13px;
+        border: none;
+        border-radius: 3px;
+        width: 100%;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        margin-top: 20px;
+    }
+    
+    #datos-reserva .volver {
+        font-size: 0.9rem;
+        color: #999;
+        margin-top: 18px;
+        display: block;
+        text-decoration: none;
+    }
+    
+    #como-llegar {
+        float: left;
+        width: 70%;
+        padding-right: 40px;
+    }
+    
+    #como-llegar #mapa {
+        width: 100%;
+        height: 300px;
+    }
+    
+    #como-llegar .recuerdo {
+        font-size: 0.85rem;
+        margin: 10px 0 10px;
+        text-aling: left;
+    }
+    
+    #como-llegar .indicaciones {
+        text-align: left;
+        background-color: #02182B;
+        padding: 14px 14px;
+        overflow: auto;
+        color: #FFF;
+    }
+    
+    #como-llegar .indicaciones span {
+        width: 33.3%;
+        display: block;
+        color: #FFF;
+        float: left;
+        text-align: center;
+        font-weight: 300;
+    }
+    
+    #como-llegar .indicaciones>div {
+        float: left;
+    }
+    
+    #como-llegar .indicaciones .direccion {
+        width: 50%;
+    }
+    
+    #como-llegar .indicaciones .tiempo {
+        width: 25%;
+    }
+    
+    #como-llegar .indicaciones .metros {
+        width: 25%;
+    }
+    
+    #contenedor-reserva-ok {
+        overflow: auto;
+        padding: 40px 20px 0px;
+        text-align: center;
+    }
+    
+    #contenedor-reserva-ok h1 {
+        font-size: 3rem;
+        color: #02182B;
+    }
+    
+    #contenedor-reserva-ok .qr {
+        width: 160px;
+    }
+    
+    #contenedor-reserva-ok .localizador {
+        color: #D7263D;
+        text-decoration: underline;
+    }
+    
+    #contenedor-reserva-ok .texto-loca {
+        margin-bottom: 40px
+    }
+    
+    #como-llegar-ok {
+        margin: 0 auto;
+        float: none;
+        width: 70%;
+        padding-right: 40px;
+    }
+    
+    #como-llegar-ok #mapa {
+        width: 100%;
+        height: 300px;
+    }
+    
+    #como-llegar-ok .recuerdo {
+        font-size: 0.85rem;
+        margin: 10px 0 10px;
+        text-align: left;
+    }
+    
+    #como-llegar-ok .indicaciones {
+        text-align: left;
+        background-color: #02182B;
+        padding: 14px 14px;
+        overflow: auto;
+        color: #FFF;
+    }
+    
+    #como-llegar-ok .indicaciones span {
+        width: 33.3%;
+        display: block;
+        color: #FFF;
+        float: left;
+        text-align: center;
+        font-weight: 300;
+    }
+    
+    #como-llegar-ok .indicaciones>div {
+        float: left;
+    }
+    
+    #como-llegar-ok .indicaciones .direccion {
+        width: 50%;
+    }
+    
+    #como-llegar-ok .indicaciones .tiempo {
+        width: 25%;
+    }
+    
+    #como-llegar-ok .indicaciones .metros {
+        width: 25%;
+    }

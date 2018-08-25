@@ -1,0 +1,36 @@
+	.header {
+			height: 80px;
+			background-color: blue;
+		}
+	
+
+	
+	.logo {
+		width: 100px;
+
+	}
+
+	.main #productos .producto img {
+			width: 100%;
+			height: auto;
+			max-width: 100%;
+		}
+	
+	.navegacion {
+			float: right;
+		}
+		
+	.navegacion ul {
+			margin:0;
+			padding: 0;
+			list-style: none;
+		}
+	
+	.navegacion ul li {
+			display: inline-block;
+			padding:30px 10px;
+		}
+	
+	.navegacion ul li a {
+			color:#FFF;	
+		}

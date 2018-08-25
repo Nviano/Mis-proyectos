@@ -1,0 +1,8 @@
+.header {
+    height: 100px;
+    background-color: aquamarine;
+}
+
+#logo-empresa {
+    background-image: url ("../pagina-real/imagenes/logo-definitivo.png");
+}

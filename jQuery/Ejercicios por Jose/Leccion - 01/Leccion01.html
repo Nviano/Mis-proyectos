@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Leccion 01</title>
+	<script src="js/lib/jquery-3.3.1.min.js"></script>
+	<style>
+		.textoVerde {
+			color: green;
+		}
+	</style>
+	<script>
+
+		//jQuery('ul').addClass('textoVerde');
+		/*$(document).ready(
+			function () {
+				$('ul').addClass('textoVerde');
+			}
+		)*/
+		$(function () {
+			$('ul').addClass('textoVerde');
+		})
+
+		function suma(numero1, numero2, sumaYmuestra, sumaPorDos) {
+			let suma = numero1 + numero2;
+			sumaYmuestra(suma);
+			sumaPorDos(suma);
+		}
+
+		suma(1, 2, function (dato) {
+			console.log("La suma es: " + dato);
+		}, function (dato) {
+			console.log("La suma por dos es: " + (dato * 2));
+		}
+		)
+	</script>
+</head>
+
+<body>
+	<ul>
+		<li>Hola 1</li>
+		<li>Hola 2</li>
+		<li>Hola 3</li>
+	</ul>
+
+	<ul>
+		<li>Negrita</li>
+		<li>Negrita</li>
+		<li>Negrita</li>
+	</ul>
+
+
+</body>
+
+</html>

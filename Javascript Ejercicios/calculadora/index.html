@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/calculadora.js"></script>
+	<script>
+		var pulsacionIgual = false;
+	</script>
+    <title>Calculadora</title>
+</head>
+<body>
+    <div id="contenedor">   
+
+        <table class="calculadora">
+            <tr>
+              <td colspan="4"><span id="resultado"></span></td>
+            </tr>
+            <tr>
+              <td><button onclick="addText('7');"  id="siete">7</button></td>
+			  <td><button onclick="addText('8');" id="ocho">8</button></td>
+			  <td><button onclick="addText('9');" id="nueve">9</button></td>
+			  <td><button onclick="addText('/');" id="division">/</button></td>
+            </tr>
+            <tr>
+              <td><button onclick="addText('4');" id="cuatro">4</button></td>
+			  <td><button onclick="addText('5');" id="cinco">5</button></td>
+			  <td><button onclick="addText('6');" id="seis">6</button></td>
+			  <td><button onclick="addText('*');" id="multiplicacion">*</button></td>
+            </tr>
+            <tr>
+              <td><button onclick="addText('1');" id="uno">1</button></td>
+			  <td><button onclick="addText('2');" id="dos">2</button></td>
+			  <td><button onclick="addText('3');" id="tres">3</button></td>
+			  <td><button onclick="addText('-');" id="resta">-</button></td>
+            </tr>
+            <tr>
+              <td><button onclick="igual();" id="igual">=</button></td>
+			  <td><button onclick="borrar();" id="reset">C</button></td>
+			  <td><button onclick="addText('0');" id="cero">0</button></td>
+			  <td><button onclick="addText('+');" id="suma">+</button></td>
+            </tr>
+			 <tr>
+              
+			  <td colspan="2"><button onclick="exchangeDollarToEuro();" id="reset">$ -> €</button></td>
+			  <td colspan="2"><button onclick="exchangeEuroToDollar();" id="cero">€ -> $</button></td>
+            </tr>
+			<tr>
+				<td colspan="4"><button onclick="addText('^');" id="igual">^</button></td>
+			</tr>
+        </table>
+    </div>
+    
+</body>
+</html>

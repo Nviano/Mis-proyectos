@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Widgets</title>
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <script src="js/lib/jquery_ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/widgets.js"></script>
+    <link rel="stylesheet" href="js/lib/jquery_ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="js/lib/jquery_ui/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="js/lib/jquery_ui/jquery-ui.theme.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<style>
+    #cajaEfectos {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        margin-right: 30px;
+        margin-top: 30px;
+        border: 4px solid #000;
+        display: none;
+    }
+</style>
+
+<body>
+    <button id="mostrar">Mostrar</button>
+    <div id="cajaEfectos">
+    </div>
+
+    <h3>Tooltip</h3>
+    <a href="#" title="Enlace para acceder a la seccion de 
+    mis datos en la web">Mis datos</a>
+    <a href="#" title="Logueate aqui">Identificarse</a>
+    <a href="#" title="Ver todos mis amigos">Mis amigos</a>
+    <hr>
+    <h3>Cuadro de dialogo</h3>
+    <div id="popup" title="Soy una ventana de dialogo">
+        <p>Soy el texto del cuadro de dialogo</p>
+    </div>
+    <button id="lanzarDialog">Lanzar cuadro de dialogo</button>
+
+    <hr>
+    <h3>Calendario</h3>
+    <input type="text" id="calendario">
+
+    <hr>
+    <h3>Tabs</h3>
+    <div id="tabs">
+        <ul>
+            <li>
+                <a href="#tabs-1">Enlace 1</a>
+            </li>
+            <li>
+                <a href="#tabs-2">Enlace 2</a>
+            </li>
+            <li>
+                <a href="#tabs-3">Enlace 3</a>
+            </li>
+        </ul>
+        <div id="tabs-1">Texto 1</div>
+        <div id="tabs-2">Texto 2</div>
+        <div id="tabs-3">Texto 3</div>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

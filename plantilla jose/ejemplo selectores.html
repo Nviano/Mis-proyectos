@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo de Selectores</title>
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <script src="ejemplo_selectores.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        .rojo {
+            color: red;
+        }
+        
+        azul {
+            color: blue;
+        }
+        
+        #caja {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+
+    <script>
+        $(document).ready(
+            function() {}
+        )
+    </script>
+</head>
+
+
+<body>
+    <div>
+        <div id="contenedor-parrafos">
+            <p>Parrafo 1</p>
+            <p>Parrafo 2</p>
+        </div>
+        <div>
+            <ul id="lista">
+                <li id="elemento1">Elemento 1</li>
+                <li class="rojo">
+                    <a href="https://www.botanical-online.com/nabo_propiedades_curativas.htm" title="nabo_propiedades_curativas">Elemento 2</a>
+                </li>
+                <li class="rojo">Elemento 3</li>
+                <li>
+                    <a href="https://cookpad.com/es/buscar/nabos" title="recetas_nabo">Elemento 4</a>
+                </li>
+                <li>Elemento 5</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+</html>

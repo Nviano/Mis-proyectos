@@ -1,0 +1,100 @@
+.header tr th a {
+font-family: 'Permanent Marker', cursive; 
+font-size: 25px;
+color: #E4E5A8
+
+}
+
+.main  {
+
+font-family: 'Permanent Marker', cursive; 
+font-size: 50px;
+color: #E4E5A8
+
+}
+
+.outlet tr td a {
+
+font-family: 'Permanent Marker', cursive; 
+font-size: 25px;
+color: #E4E5A8;
+width: 100%;
+
+}
+
+.eslogan  {
+
+font-family: impact , cursive; 
+font-size: 25px;
+color: #E4E5A8
+
+}
+
+.footer {
+	float: left;
+	background-color: #B1B1B1;
+	font-family: impact;
+	font-size: 16px;
+	color: #E4E5A8
+}
+
+
+.footer2 {
+
+	background-color: #B1B1B1;
+	font-family: 'Rajdhani', sans-serif;;
+	font-size: 15px;
+	color: black
+
+}
+
+.footer-rosa {
+
+	padding: 1;
+	background-color:#B1B1B1;
+	width: 100%;
+}
+
+.tabla-marcas {
+	padding: 10;
+	background-color: #FCC6F9;
+	width: 100%;
+
+}
+
+.contenedor1 {
+        border:2px solid red;
+        margin: 10px 90px 90px 200px;
+        width:300px;
+        height: 300px;
+        background-color: #fff;
+        color:#000;
+    }
+
+
+.contenedor2 {
+        border:2px solid yellow;
+        padding:10px 20px 10px 20px;
+        margin: 15px 0px 10px 1000px;
+        width:300px;
+        height: 300px;
+        background-color: #fff;
+        color:#000;
+    }
+
+.contenedor3 {
+        border:2px solid green;
+        padding:10px 20px 10px 20px;
+        margin: 15px 0px 10px 500px;
+        width:300px;
+        height: 100px;
+        background-color: #fff;
+        color:#000;
+    }
+
+
+
+
+
+
+

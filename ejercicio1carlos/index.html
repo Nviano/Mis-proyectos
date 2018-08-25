@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="js/inicializar.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/libreriausers.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/clases/user.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/gestionusuarios.js" charset="utf-8"></script>
+
+    <script>
+    </script>
+
+</head>
+
+<body onload="inicializar()">
+    <section>
+        <div>
+            <form>
+                <ul>
+                    <li>
+                        <span>Tipo de usuario</span>
+                        <span>
+                            <div id="spanTipoUsuario"></div>
+                            <!--
+                            <select name = "tipo">
+                                <option value="1" >Basic</option>
+                                <option value="2" >Advanced</option>
+                                <option value="3" selected>Premium</option>
+                                <option value="4" >VIP</option>
+                            </select>-->                      
+                        </span>
+                    </li>
+                    <li>
+                        <span>Nombre</span>
+                        <span>
+                            <input type="text" maxlength="50" id="nombre"/>                        
+                        </span>
+                    </li>
+                    <li>
+                        <span>Apellidos</span>
+                        <span>
+                            <input type="text" maxlength="50" name="apellidos"/>                        
+                        </span>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div>
+            <span>
+                <button id="button.save" onclick="setUsers();">Guardar</button>                      
+            </span>
+        </div>
+    </section>
+    <section>
+        <div>
+            <form>
+                <ul>
+                    <li>
+                        <span>Nombre</span>
+                        <span id="mostrar_nombre">
+                            
+                        </span>
+                    </li>
+                    <li>
+                        <span>Apellidos</span>
+                        <span id="mostrar_apellidos">
+                                                 
+                        </span>
+                    </li>
+                    <li id="mostrar_tipo">
+                        <span>Tipo</span>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>

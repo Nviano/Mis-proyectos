@@ -1,0 +1,250 @@
+
+
+a {
+
+	text-decoration: none;
+	
+}
+ 
+
+.header2 {
+position: relative;
+width: 100%;
+background:#000;
+color: red;
+height: 130px;
+display: inline-block;
+	float: left;
+	width: 310px;
+	height: 130px;
+	background-color: black;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+		width: 100%;
+	font-family: 'Permanent Marker', cursive ;
+	font-size: 25px;
+}
+
+.caja-logo {
+
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+
+}
+
+.caja-inicio {
+
+	width: 100%;
+	font-family: 'Permanent Marker', cursive ;
+	font-size: 25px;
+	}
+
+.footer {
+width: 100%;
+clear: both;
+background-color: #FCC6F9;
+display: inline-block;
+
+}
+
+
+#footerlist {
+	position: relative;
+	width: 100%;
+	background-color:  #FCC6F9;
+	float: left;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+#tamaniologos {
+	width: 7.1%;
+}
+
+
+
+#logo {
+
+float: left;
+
+}
+
+
+
+div#imagen-quienes-somos {
+float: left;
+width: 300px;
+height: 500px;
+background-color: red;
+margin-top: 500px;
+
+
+}
+
+
+
+
+div#texto-quienes-somos {
+float: right;
+width: 300px;
+height: 500px;
+background-color: red;
+margin-top: 500px;
+
+}
+
+
+
+.nosotros  {
+	font-family: 'Rajdhani', sans-serif;
+	width: 50%;
+	font-size: 25px;
+	line-height: 35px;
+	margin-top: 100px;
+
+}
+
+.imagen-nosotros img {
+
+	width: 800px;
+	margin-top: 30px;
+	margin-left: 30px;
+	border-radius: 15px;
+}
+
+.alquila img {
+
+width: 200px;
+margin-top: 40px;
+margin-left: 100px;
+
+}
+
+.contacta {
+
+	width: 33%;
+
+
+}
+
+
+.horario {
+	
+	width: 33%;
+	margin-right: 100px;
+
+}
+
+
+.contacto {
+
+	width: 1625px;
+	height: 600px;
+
+
+}
+
+
+form {
+
+	width: 800px;
+	margin:left;
+	background: rgba(0,0,0,0.4);
+	padding: 10px, 20px;
+	box-sizing: border-box;
+	margin-top: 20px;
+	border-radius: 15px;
+
+}
+
+
+h2 {
+	text-align: center;
+	margin:0;
+	font-size: 20px;
+	margin-bottom: 20px;
+
+
+}
+
+input, textarea {
+
+	width: 90%;
+	margin-bottom: 20px;
+	margin-left: 35px;
+	padding: 7px;
+	box-sizing: border-box;
+	font-size: 15px;
+	border:none;
+}
+
+
+textarea {
+
+	min-height: 100px;
+	max-height: 200px;
+	max-width: 100%;
+
+}
+
+#boton {
+
+	background:#31384A;
+	color: #fff;
+	padding: 20px;
+}
+
+
+.contactenos {
+	font-size: 40px;
+	margin: auto;
+	font-family: 'Rajdhani', sans-serif;
+
+}
+
+
+#footer-gris {
+
+	background-color: #B1B1B1;
+	color:black;
+	width:100%;
+	
+	position: relative;
+
+}
+
+#cabecera-foot-gris {
+	
+	width: 100%;
+	list-style-type: none;
+	position: relative;
+	float: left;
+	font-family: 'Rajdhani', sans-serif;
+	color:black;
+}
+
+
+#tamanio-header {
+	width: 20%;
+}
+
+
+
+.prueba_li {
+	display: inline-block;
+	width: 23%;
+}
+
+.color-ama {
+	color: #E4E5A8;
+	font-family: impact;
+}

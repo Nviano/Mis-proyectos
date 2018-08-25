@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/calculadora.js"></script>
+
+</head>
+
+<body onload="init();">
+    <div class="container mt-5 mr-5">
+        <div class="col-5">
+            <div>
+                <div class="border border-dark col-8 btn btn-secondary btn-lg disabled">
+                    <span class="col-lg-12 pt-4" id="resultado"></span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <button id="siete" type="button" class="btn btn-dark col-lg-2 col-md-3 col-xs-3">7</button>
+                    <button id="ocho" type="button" class="btn btn-dark col-lg-2 col-md-3 col-xs-3">8</button>
+                    <button id="nueve" type="button" class="btn btn-dark col-lg-2 col-md-3 col-xs-3">9</button>
+                    <button id="suma" type="button" class="btn btn-info border border-dark col-lg-2 col-md-3 col-xs-3">+</button>
+                </div>
+                <div class="row">
+                    <button id="cuatro" type="button" class="btn btn-dark col-lg-2 col-md-3 col-xs-3">4</button>
+                    <button id="cinco" type="button" class="btn btn-dark col-lg-2 col-md-3 col-xs-3">5</button>
+                    <button id="seis" type="button" class="btn btn-dark col-lg-2 col-md-3 col-xs-3">6</button>
+                    <button id="resta" type="button" class="btn btn-info border border-dark col-lg-2 col-md-3 col-xs-3">-</button>
+                </div>
+                <div class="row">
+                    <button id="uno" type="button" class="btn btn-dark col-lg-2 col-md-3 col-xs-3">1</button>
+                    <button id="dos" type="button" class="btn btn-dark col-lg-2 col-md-3 col-xs-3">2</button>
+                    <button id="tres" type="button" class="btn btn-dark col-lg-2 col-md-3 col-xs-3">3</button>
+                    <button id="multiplicacion" type="button" class="btn btn-info border border-dark col-lg-2 col-md-3 col-xs-3">*</button>
+                </div>
+                <div class="row">
+                    <button id="reset" type="button" class="btn btn-danger border border-dark col-lg-2 col-md-3 col-xs-3">CE</button>
+                    <button id="cero" type="button" class="btn btn-dark col-lg-2 col-md-3 col-xs-3">0</button>
+                    <button id="igual" type="button" class="btn btn-success border border-dark col-lg-2 col-md-3 col-xs-3">=</button>
+                    <button id="division" type="button" class="btn btn-info border border-dark col-lg-2 col-md-3 col-xs-3">/</button>
+                </div>
+            </div>
+            <div>
+                <button id="eur" type="button" class="btn btn-success border border-dark col-lg-4 col-md-5 col-xs-3">€</button>
+                <button id="dolar" type="button" class="btn btn-primary border border-dark col-lg-4 col-md-5 col-xs-6">$</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

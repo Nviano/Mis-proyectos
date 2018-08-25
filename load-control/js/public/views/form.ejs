@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="js/lib/jquery_ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="js/lib/jquery_ui/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="js/lib/jquery_ui/jquery-ui.theme.min.css">
+    <script src="js/lib/jquery_ui/jquery-ui.min.js"></script>
+    <link type="text/javascript" src="/js/lib/popper.min.js" charset="utf-8"></link>
+    <link type="text/javascript" src="js/lib/bootstrap.min.js" charset="utf-8"></link>
+    <link type="text/javascript" src="js/reloj.js" charset="utf-8"></link>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="../js/formulario.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css" rel="stylesheet" type="text/css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+
+    <title>load control</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="row">
+            <div class="col perfil mt-5">
+                Selecciona tu perfil
+            </div>
+        </header>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row ">
+                    <div class="col-md-8 p-0 " id="caja">
+                        <div class="row justify-content-between">
+                            <div class="col-md-5 doc">
+                                <div class="box">
+                                    <img src="images/man-852766_1920.jpg" alt="Image did not load...">
+                                </div>
+                                <button class="btn" id="staff">STAFF</button>
+                            </div>
+                            <div class="col-md-5 doc">
+                                <div class="box">
+                                    <img src="images/Cool-basketball.jpg" alt="Image did not load...">
+                                </div>
+                                <button class="btn" id="jugador">PLAYER</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario del administrador -->
+
+    <div class="col" id="formadmin" style="display: none">
+        <form id="formulario" class="formulario">
+            <div class="form-row justify-content-center">
+                <div class="form-group col-md-2">
+                    <label for="inputEmail4">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" data-validation="custom" data-validation-regexp="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" data-validation-length="min3"
+                        placeholder="Introduce Nombre"></input>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Primer Apellido</label>
+                    <input type="text" class="form-control" id="apellido1" name="apellido1" data-validation="required alphanumeric" placeholder="Introduce tu primer apellido"></input>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Segundo Apellido</label>
+                    <input type="text" class="form-control" id="apellido2" name="apellido2" data-validation-regexp="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" placeholder="Introduce tu segundo apellido"></input>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" data-validation="required number" placeholder="Introduce tu numero de teléfono"></input>
+                </div>
+
+            </div>
+            <div class="form-row justify-content-center">
+                <div class="form-group col-md-2">
+                    <label for="inputEmail4">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" data-validation="required email" placeholder="Introduce Email"></input>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password_confirmation" data-validation="length" data-validation-length="min8" placeholder="Introduce contraseña"></input>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Confirma contraseña</label>
+                    <input type="password" class="form-control" id="confirma" name="password" data-validation="confirmation" placeholder="Confirma contraseña"></input>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputEmail4">Fecha de nacimiento</label>
+                    <input type="text" class="form-control" id="fechaNacimiento" name="fechaNacimiento" data-validation="required date" data-validation-format="yyyy/mm/dd" placeholder="Introduce fecha"></input>
+                </div>
+
+            </div>
+            <div class="form-row justify-content-center">
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Pais</label>
+                    <input type="text" class="form-control" id="pais" name="pais" data-validation="custom" data-validation-regexp="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" data-validation-length="min3"
+                        placeholder="Introduce Pais"></input>
+                </div>
+
+                <div class="form-group col-md-2">
+                    <label for="inputState">Club</label>
+                    <select id="equipos" name="clubes" class="form-control p-0">
+                     
+                   
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <button type="submit" class="btn btn-primary" id="btn">Registrarte</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+    <!-- Formulario de los jugadores -->
+    <div class="col" id="formplayer" style="display: none">
+        <form id="formularioplayer">
+            <div class="form-row justify-content-center">
+                <div class="form-group col-md-2">
+                    <label for="inputEmail4">Nombre</label>
+                    <input type="text" class="form-control" id="nombreplayer" name="nombre" data-validation="custom" data-validation-regexp="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" data-validation-length="min3"
+                        placeholder="Introduce Nombre"></input>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Primer Apellido</label>
+                    <input type="text" class="form-control" id="apellido1player" name="apellido1" data-validation="required alphanumeric" placeholder="Introduce tu primer apellido"></input>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Segundo Apellido</label>
+                    <input type="text" class="form-control" id="apellido2player" name="apellido2" data-validation-regexp="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" placeholder="Introduce tu segundo apellido"></input>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Teléfono</label>
+                    <input type="text" class="form-control" id="telefonoplayer" name="telefono" data-validation="required number" placeholder="Introduce tu numero de teléfono"></input>
+                </div>
+            </div>
+            <div class="form-row justify-content-center">
+                <div class="form-group col-md-2">
+                    <label for="inputEmail4">Email</label>
+                    <input type="text" class="form-control" id="emailplayer" name="email" data-validation="required email" placeholder="Introduce Email"></input>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Contraseña</label>
+                    <input type="password" class="form-control" id="passwordplayer" name="password_confirmation" data-validation="length" data-validation-length="min8" placeholder="Introduce contraseña"></input>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Confirma contraseña</label>
+                    <input type="password" class="form-control" id="confirmaplayer" name="password" data-validation="confirmation" placeholder="Confirma contraseña"></input>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputEmail4">Fecha de nacimiento</label>
+                    <input type="text" class="form-control" id="fnacimientoplayer" name="fechaNacimiento" data-validation="required date" data-validation-format="yyyy/mm/dd" placeholder="Introduce fecha"></input>
+                </div>
+            </div>
+            <div class="form-row justify-content-center">
+
+                <div class="form-group col-md-2 ">
+                    <label for="inputPassword4">Pais</label>
+                    <input type="text" class="form-control" id="paisplayer" name="pais" data-validation="custom" data-validation-regexp="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" data-validation-length="min3"
+                        placeholder="Introduce Pais"></input>
+                </div>
+
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Altura</label>
+                    <input type="text" class="form-control" id="altura" name="altura" data-validation="required alphanumeric" placeholder="Introduce Altura en cm"></input>
+                </div>
+
+                <div class="form-group col-md-2">
+                    <label for="inputPassword4">Peso</label>
+                    <input type="text" class="form-control" name="peso" data-validation="required alphanumeric" placeholder="Introduce Peso en Kg"></input>
+                </div>
+            </div>
+            <div class="form-row justify-content-center">
+                <div class="form-group col-md-2">
+                    <label for="inputState">Club</label>
+                    <select id="equiposplayer" name="clubes" class="form-control p-0">
+                             
+                           
+                    </select>
+                </div>
+
+                <div class="form-group col-md-2">
+                    <label for="inputState">Posición</label>
+                    <select id="inputState" name="posicion" class="form-control p-0">
+                        <option selected>Base</option>
+                        <option>Escolta</option>
+                        <option>Alero</option>
+                        <option>Ala-pívot</option>
+                        <option>Pívot</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <button type="submit" class="btn btn-primary" id="btnplayer">Registrarte</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>

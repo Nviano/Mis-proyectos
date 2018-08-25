@@ -1,0 +1,11 @@
+CREATE TABLE `loadcontrol`.`persona` (
+  `idPersona` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `apellido1` VARCHAR(45) NOT NULL,
+  `apellido2` VARCHAR(45) NULL,
+  `email` VARCHAR(80) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `fnacimiento` DATE NOT NULL,
+  `telefono` VARCHAR(20) NULL,
+  `pais` VARCHAR(60) NOT NULL,
+  PRIMARY KEY (`idPersona`));

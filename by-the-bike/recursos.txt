@@ -1,0 +1,20 @@
+1. Colores
+
+Rojo: #D7263D
+Azul oscuro: #02182B
+Azul claro: #00AEEF
+Gris: #efefef
+
+2.Páginas/estructura
+
+index.html			--> Pantalla selección de ciudad
+/bicicletas/index.html		--> Listado de estaciones cerca y bloques de rutas
+/login/index.html		--> Pantalla de login
+/registro/index.html		--> Pantalla de registro
+/reserva/index.html		--> Pantalla de reserva
+/reserva/reserva-ok.html	--> Pantalla de reserva OK
+/css/estilos.css		--> Hoja de estilos del proyecto		
+
+3. Fuente
+
+Montserrat (Google Fonts)

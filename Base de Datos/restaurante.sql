@@ -1,0 +1,1 @@
+SELECT IDCamarero,IdRestaurante,IdPersona,FechaIngreso,IdEstado FROM Camarero WHERE FechaIngreso > '20150101'order by IdCamarero DESC, FechaIngreso;

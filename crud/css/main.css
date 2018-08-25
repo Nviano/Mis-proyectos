@@ -1,0 +1,16 @@
+.container {
+    color: #fff;
+}
+
+p {
+    color: red;
+}
+
+div.contenedor {
+    width: 80%;
+}
+
+
+/*# sourceMappingURL=main.css.map */
+
+@import "bootstrap/bootstrap";

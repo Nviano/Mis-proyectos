@@ -1,0 +1,42 @@
+#contenedor{
+    background-color: #ccc;
+    padding: 50px;
+    width: 17%;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: 5px solid;
+}
+#numeros{
+    width: 33%;
+    /*float: left;*/
+}
+#operaciones{
+    width: 33%;
+    /*float: left;*/
+}
+
+button{
+    padding: 15px;
+    font-size: 30px;
+    border-radius: 4px;
+    background-color:#4caf50;
+}
+input{
+    padding: 8px;
+}
+#resultado{
+    display: block;
+    text-align: right;
+    font-size: 40px;
+    margin-bottom: 30px;
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding-right: 10px;
+    border: 3px solid;
+  }
+  #reset{
+      background-color: #f44336;
+  }

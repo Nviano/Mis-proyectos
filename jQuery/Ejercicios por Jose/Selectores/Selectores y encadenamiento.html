@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Selectores</title>
+	<script src="js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/selectores.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		img {
+			width: 200px;
+			height: 200px;
+		}
+
+		hr {
+			margin-bottom: 60px;
+		}
+
+		.azul {
+			color: blue;
+		}
+		.margen_superior
+		{
+			display: block;
+			margin-top: 50px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<h1>Selectores</h1>
+		<hr>
+		<div class="row">
+			<div class="col-4">
+				<img src="img/goku.jpg" class="rounded-circle">
+			</div>
+			<div class="col-5">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis lacus a dapibus dictum. Vivamus vestibulum eros
+					nec lorem laoreet consectetur. Aliquam ut interdum lectus. Donec nibh urna, mollis sit amet feugiat at, tempor id ante.
+					Cras eu condimentum dui, non posuere dolor. Mauris vel mi tristique, maximus nisl non, placerat justo. Donec ac dignissim
+					eros. Cras id condimentum elit, ac sagittis felis. Nam lacus sem, dignissim vitae dignissim et, bibendum sit amet ante.
+					Donec tempus facilisis magna, sit amet tempus velit fermentum in. Nam fringilla nulla eu augue sollicitudin maximus.
+					Aenean eu mauris in nisi molestie ornare nec ut orci. Morbi placerat dapibus ipsum, ut dignissim enim luctus vel.
+				</p>
+			</div>
+
+			<div class="col-3">
+				<ul>
+					<li>Matemáticas</li>
+					<li id="programacion">Programación</li>
+					<li>Física</li>
+					<li>Geografía</li>
+				</ul>
+			</div>
+		</div>
+		<p id="rojo" class="border_solid">Selector de ID 1</p>
+		<p id="amarillo" class="cebra">Selector de ID 2</p>
+		<p id="verde" class="border_solid">Selector de ID 3</p>
+		<p class="cebra">Soy una linda cebra</p>
+		<ul id="enlaces">
+			<li>
+				<a href="https://www.google.com" title="Google" style="background-color:blue">Ir a Google</a>
+			</li>
+			<li>
+				<a href="https://www.codespaceacademy.com" title="Codespace">Ir a Codespace</a>
+			</li>
+			<li>
+				<a href="http://www.marca.com" title="Marca">Ir a Marca</a>
+			</li>
+		</ul>
+		
+	<div id="caja">
+			<p>Hola soy una caja</p>
+			<ul>
+				<li >Elemento 1</li>
+				<li class="resaltado">Elemento 2</li>
+			</ul>
+			<span class="resaltado">Otro elemento</span>
+		</div>
+	</div>
+
+
+	<script>
+		$('img').attr("src", "img/Vegeta.png")
+			.removeClass("rounded-circle")
+			.addClass("rounded");
+	</script>
+
+</body>
+
+</html>

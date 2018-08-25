@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.navbar {
+  position: relative;
+  min-height: 70px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  background-color: #222222;
+  border-radius:0;
+}
+
+.orange{
+ background-color: #EB6C55;
+ margin: 0;
+ min-height: 40px;
+ border-radius:0;
+}
+
+.navbar p {
+  color: white;
+  padding-top: 10px;
+}

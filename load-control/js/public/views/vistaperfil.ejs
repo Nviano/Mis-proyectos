@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="js/lib/jquery_ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="js/lib/jquery_ui/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="js/lib/jquery_ui/jquery-ui.theme.min.css">
+    <script src="js/lib/jquery_ui/jquery-ui.min.js"></script>
+    <link type="text/javascript" src="/js/lib/popper.min.js" charset="utf-8"></link>
+    <link type="text/javascript" src="js/lib/bootstrap.min.js" charset="utf-8"></link>
+    <script src="js/main.js"></script>
+    <script src="js/vistaperfil.js"></script>
+    <link rel="stylesheet" href="css/vistaperfil.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css" rel="stylesheet" type="text/css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+    <title>Vista de perfil</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10 back">
+                <div class="row">
+                    <div class="col-6" id="vistaperfil">
+                        <div class="usuario mt-5 mb-5">
+                            <h1>Perfil de usuario</h1>
+                            <p></p>
+                        </div>
+                        <div class="nombre mt-5 mb-5">
+                            <h4>Nombre</h4>
+                            <p>
+                                <%= resultado[0].nombre%>
+                            </p>
+                        </div>
+                        <div class="apellido1 mt-5 mb-5">
+                            <h4>Primer Apellido</h4>
+                            <p>
+                                <%= resultado[0].apellido1%>
+                            </p>
+                        </div>
+                        <div class="telefono mt-5 mb-5">
+                            <h4>Teléfono</h4>
+                            <p>
+                                <%= resultado[0].telefono%>
+                            </p>
+                        </div>
+                        <div class="pais mt-5 mb-5">
+                            <h4>Pais</h4>
+                            <p>
+                                <%= resultado[0].pais%>
+                            </p>
+                        </div>
+                        <div class="nacimiento mt-5 mb-5">
+                            <h4>Fecha de Nacimiento</h4>
+                            <p>
+                                <%= resultado[0].fechaNacimiento%>
+                            </p>
+                        </div>
+                        <div class="email mt-5 mb-5">
+                            <h4>Email</h4>
+                            <p>
+                                <%= resultado[0].email%>
+                            </p>
+                        </div>
+                        <div class="altura mt-5 mb-5">
+                            <h4>Altura</h4>
+                            <p>
+                                <%= resultado[0].altura%>
+                            </p>
+                        </div>
+                        <div class="peso mt-5 mb-5">
+                            <h4>Peso</h4>
+                            <p>
+                                <%= resultado[0].peso%>
+                            </p>
+                        </div>
+                        <div class="posicion mt-5 mb-5">
+                            <h4>Posición</h4>
+                            <p>
+                                <%= resultado[0].posicion%>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-4 foto">
+                        <div class="foto">Foto</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

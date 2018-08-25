@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Leccion 1</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="js/lib/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/selectores.js"></script>
+    <style>
+        .textoVerde {
+            color: green;
+        }
+        
+        .negrita {
+            font-weight: bold;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <ul>
+        <li>Hola1</li>
+        <li>hola2</li>
+        <li>hola3</li>
+    </ul>
+
+    <ul>
+        <li>Bye</li>
+        <li id="tabla2">Bye2</li>
+        <li id="tabla3">Bye3</li>
+    </ul>
+    <script>
+        $('#tabla2').addClass('negrita');
+        $('#tabla3').addClass('textoVerde');
+        //jQuery('li').css('color', 'red');
+        //$('li').addClass('textoVerde');
+    </script>
+</body>
+
+
+</html>

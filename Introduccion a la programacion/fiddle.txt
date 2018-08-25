@@ -1,0 +1,14 @@
+if basico
+https://jsfiddle.net/tacL14u6/4/ 
+if avanzado con comparacion
+https://jsfiddle.net/tacL14u6/3/
+if avanzado aritmetico con ===
+https://jsfiddle.net/5v73e56o/1/
+if avanzado string con ===
+https://jsfiddle.net/y793ox0w/1/
+Ejercicio calculadora if
+https://jsfiddle.net/obt6tLgt/1/
+else if calculadora
+https://jsfiddle.net/7pt1awfy/2/
+switch con la calculadora
+https://jsfiddle.net/9ybr8kb5/

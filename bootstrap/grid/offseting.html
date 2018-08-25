@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../js/popper.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js" charset="utf-8"></script>
+    <title>Columnas alineadas horizontalmente</title>
+    <style>
+        .row {
+            background: #e8e8e8;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .columna {
+            background: #f2f2f2;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #4d5061;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+        <div class="columna col-auto offset-1">Columna</div>
+        </div>
+        <div class="row">
+            <div class="columna col-4 offset-4">Columna</div>
+        </div>
+
+        <div class="row">
+            <div class="columna col-auto offset-1">Columna</div>
+            <div class="columna col-auto offset-5">Columna</div>
+        </div>
+        <div class="row">
+            <div class="columna col-4 offset-1 offset-md-4">Columna</div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

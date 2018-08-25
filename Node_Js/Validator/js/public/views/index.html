@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/lib/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../js/lib/jquery_ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="../js/lib/jquery_ui/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../js/lib/jquery_ui/jquery-ui.theme.min.css">
+    <script src="../js/lib/jquery_ui/jquery-ui.min.js"></script>
+    <script src="../js/formulario.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css" rel="stylesheet" type="text/css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <form id="formularioContacto">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input id="nombre" type="text" class="form-control" data-validation="required alphanumeric" name="nombre">
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefono</label>
+                <input id="telefono" type="text" class="form-control" data-validation="required number" name="telefono">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="text" class="form-control" data-validation="required email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="address">Direccion</label>
+                <input id="direccion" type="text" class="form-control" data-validation="required alphanumeric" name="direccion">
+            </div>
+            <div class="form-group">
+                <label for="date">Fecha de nacimiento</label>
+                <input id="fnacimiento" type="text" class="form-control" data-validation="required date" data-validation-format="yyyy/mm/dd" name="fnacimiento">
+            </div>
+            <div class="form-group">
+                <button id="enviar" type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
