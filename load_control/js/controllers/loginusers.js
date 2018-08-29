@@ -4,13 +4,13 @@ var bcrypt = require('bcrypt-nodejs');
 var login = {
     loginPersona: function(req, res) {
         console.log(req.body);
-        let sql = `SELECT * from persona where email ='${req.body.email}'`;
+        let sql = `SELECT * from persona where email ='${req.body.email}' && nombre='${req.body.name}'`;
         con.query(sql, function(err, result) {
             if (err) {
                 return res.send(err);
             } else {
                 if (result == "") {
-                    return res.send('Email introducido no válido');
+                    return res.send('Email o Nombre introducido no válido');
                 } else {
                     bcrypt.compare(req.body.password, result[0].password, function(err, iguales) {
                         if (err) {
