@@ -32,15 +32,15 @@ class SimpleSelectClub extends React.Component {
   render() {
     const { classes, clubes} = this.props;
 
-    const clubesList = () => {
+    let clubesList = (
       
       clubes.map((club,index)=> {
+        return(
         <option value={club.idClub} key={index}>{club.nombre}</option>
-       
+        )
       }
-      )}
-      const hola = clubesList;
-      console.log(hola);
+      ))
+     
 
     return (
      
@@ -48,14 +48,14 @@ class SimpleSelectClub extends React.Component {
         <FormControl className={classes.formControl}>
           <Select
           native
-            value={45}
+            
             onChange={this.handleChange}
             name="club"
             displayEmpty
             className={classes.selectEmpty}
           >
           <option value='' >Club</option>
-            {hola}
+            {clubesList}
             
           </Select>
         </FormControl>

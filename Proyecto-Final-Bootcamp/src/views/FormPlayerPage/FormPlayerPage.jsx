@@ -291,6 +291,7 @@ class FormPlayerPage extends React.Component {
                      
                      <SimpleSelectClub
                      clubes={this.state.club}
+                     
                      />
                       
                     </CardBody>

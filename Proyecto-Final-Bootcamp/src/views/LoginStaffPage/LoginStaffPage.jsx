@@ -7,7 +7,7 @@ import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
 // core components
 import Header from "components/Header/Header.jsx";
-import HeaderLinks from "components/Header/HeaderLinks.jsx";
+import HeaderLinksStaffPage from "components/Header/HeaderLinksStaffPage.jsx";
 import Footer from "components/Footer/Footer.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
@@ -19,7 +19,7 @@ import CardHeader from "components/Card/CardHeader.jsx";
 
 import LoginStaffStyle from "assets/jss/material-kit-react/views/loginStaffPage.jsx";
 
-import image from "assets/img/background-login.jpg";
+import image from "assets/img/backgroundStaff.jpg";
 
 class LoginStaffPage extends React.Component {
 
@@ -54,7 +54,7 @@ class LoginStaffPage extends React.Component {
                     absolute
                     color="transparent"
                     brand="Load Control"
-                    rightLinks={<HeaderLinks />}
+                    rightLinks={<HeaderLinksStaffPage />}
                     {...rest}
                 />
                 <div

@@ -3,12 +3,32 @@ var UsersController = require('./controllers/usuarios');
 var app = require('./app');
 var request = require('request');
 var sweetAlert = require('sweetalert');
+var jwt = require('jsonwebtoken');
 var auth = function(req, res, next) {
     if (req.session.user)
         return next();
     else
         return res.sendStatus(404);
 };
+
+require('dotenv').config();
+
+
+//Utils
+
+function verifyToken(req, res, next) {
+    if (!req.cookies.access_token) {
+      return res.status(401).json({ error: 'UNAUTHORIZED, TOKEN IS EMPTY' });
+    }
+    const token = req.cookies.access_token;
+    jwt.verify(token, process.env.COOKIE_SECRET, (error, userData) => {
+      if (error) return res.status(422).json({ error });
+      req.user = userData;
+
+      next();
+    });
+  }
+
 
 
 
@@ -84,7 +104,7 @@ app.get('/modificar', UsersController.getUpdatePlayer);
 
 //Perfil jugador
 
-app.get('/vistaperfil', UsersController.getPlayer);
+app.get('/vistaperfil', verifyToken,UsersController.getPlayer);
 
 //Login Persona
 
@@ -119,6 +139,7 @@ app.get('/modificar', function(req, res) {
     res.render('modificar');
 });
 app.get('/logueado', auth, function(req, res) {
+    console.log(req);
     res.render('logueado', {
         email: req.session.user.email
     });

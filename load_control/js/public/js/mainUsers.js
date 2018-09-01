@@ -94,13 +94,11 @@ $(document).ready(function() {
 
     loginButton.on('click', function() {
         let data = loginForm.serialize();
-        $.post('http://localhost:3000/users/loginPersona', data, function(res) {
+        $.post('http://localhost:8000/users/loginPersona', data, function(res) {
             console.log(res)
             alert('has sido logueado correctamente')
         });
     });
-
-
 
 
 });
