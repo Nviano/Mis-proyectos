@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -30,7 +31,8 @@ class FormStaffPage extends React.Component {
     super(props);
     // we use this to make the card to appear after the page has been rendered
     this.state = {
-      cardAnimaton: "cardHidden"
+      cardAnimaton: "cardHidden",
+      club:[]
     };
   }
   componentDidMount() {
@@ -41,7 +43,28 @@ class FormStaffPage extends React.Component {
       }.bind(this),
       700
     );
+    this.getClub();
   }
+  getClub = async () => {
+    const url= `http://localhost:8000/club/`;
+    
+
+    await axios.get(url)
+    .then(res => {
+      this.setState({
+        club:res.data
+
+      })
+      
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }
+
+
+
+
   render() {
     const { classes, ...rest } = this.props;
     return (
@@ -228,7 +251,10 @@ class FormStaffPage extends React.Component {
                         }}
                       />
                      
-                      <SimpleSelectClub/>
+                     <SimpleSelectClub
+                     clubes={this.state.club}
+                     
+                     />
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>
                       <Button simple color="danger" size="lg">

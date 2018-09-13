@@ -23,6 +23,8 @@ function CustomInput({ ...props }) {
     white,
     inputRootCustomClasses,
     success,
+    onChangeInput,
+    name
     
   } = props;
 
@@ -65,6 +67,7 @@ function CustomInput({ ...props }) {
         </InputLabel>
       ) : null}
       <Input
+        onChange={onChangeInput}
         classes={{
           input: inputClasses,
           root: marginTop,
@@ -73,6 +76,7 @@ function CustomInput({ ...props }) {
         }}
         className="inputInLine"
         id={id}
+        name={name}
         {...inputProps}
       />
     </FormControl>

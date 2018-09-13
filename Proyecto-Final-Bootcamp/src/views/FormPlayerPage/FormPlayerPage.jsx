@@ -34,7 +34,7 @@ class FormPlayerPage extends React.Component {
     // we use this to make the card to appear after the page has been rendered
     this.state = {
       cardAnimaton: "cardHidden",
-      club:[]
+      club: []
     };
   }
   componentDidMount() {
@@ -47,24 +47,25 @@ class FormPlayerPage extends React.Component {
     );
     this.getClub();
   }
-  
- 
+
+
   getClub = async () => {
-    const url= `http://localhost:8000/club/`;
-    
+    const url = `http://localhost:8000/club/`;
+
 
     await axios.get(url)
-    .then(res => {
-      this.setState({
-        club:res.data
+      .then(res => {
+        this.setState({
+          club: res.data
+
+        })
 
       })
-      
-    })
-    .catch(error => {
-      console.log(error)
-    })
-  }
+      .catch(error => {
+        console.log(error)
+      })
+  };
+
   render() {
     const { classes, ...rest } = this.props;
     return (
@@ -217,7 +218,7 @@ class FormPlayerPage extends React.Component {
                           )
                         }}
                       />
-                     
+
                       <CustomInput
                         labelText="Teléfono..."
                         id="telefono"
@@ -248,52 +249,68 @@ class FormPlayerPage extends React.Component {
                           )
                         }}
                       />
-                       <CustomInput
+                      <CustomInput
                         // labelText="Fecha de nacimiento..."
                         className="fechaNacimiento"
                         id="fechaNacimiento"
                         formControlProps={{
                           fullWidth: false
-                          
+
                         }}
-                        
+
                         inputProps={{
                           type: "date",
                           endAdornment: (
                             <InputAdornment position="end">
                               <People className={classes.inputIconsColor} />
                             </InputAdornment>
-                            
+
                           )
-                          
+
                         }}
-                        
+
                       />
-                        <CustomInput
-                          labelText="Peso..."
-                          id="peso"
-                          
-                          formControlProps={{
-                            fullWidth: false
-                          }}
-                          inputProps={{
-                            type: "number",
-                            endAdornment: (
-                              <InputAdornment position="end">
-                                <People className={classes.inputIconsColor} />
-                              </InputAdornment>
-                            )
-                          }}
-                        />
+                      <CustomInput
+                        labelText="Peso..."
+                        id="peso"
+
+                        formControlProps={{
+                          fullWidth: false
+                        }}
+                        inputProps={{
+                          type: "number",
+                          endAdornment: (
+                            <InputAdornment position="end">
+                              <People className={classes.inputIconsColor} />
+                            </InputAdornment>
+                          )
+                        }}
+                      />
+                      <CustomInput
+                        labelText="Foto.."
+                        id="peso"
+
+                        formControlProps={{
+                          fullWidth: false
+                        }}
+                        inputProps={{
+                          type: "file",
+                          endAdornment: (
+                            <InputAdornment position="end">
+                              <People className={classes.inputIconsColor} />
+                            </InputAdornment>
+                          )
+                        }}
+                      />
                       <FormHelperText className="inputInLine">Fecha de Nacimiento</FormHelperText>
                       <SimpleSelect />
 
-                     
-                     <SimpleSelectClub
-                     clubes={this.state.club}
-                     
-                     />
-                      
+
+                      <SimpleSelectClub
+                        clubes={this.state.club}
+
+                      />
+
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>
                       <Button simple color="danger" size="lg">
@@ -305,7 +322,7 @@ class FormPlayerPage extends React.Component {
               </GridItem>
             </GridContainer>
           </div>
-          
+
         </div >
         <Footer />
       </div >

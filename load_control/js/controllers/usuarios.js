@@ -24,7 +24,7 @@ var controller = {
                 con.query(sql, function (err, result) {
                     if (err) {
                         console.log(err);
-                        res.send(err);
+                        res.status(500).send(err);
                     } else {
                         if (rol == 2) {
                             let sql2 = `INSERT INTO jugador (idPersona,altura,peso,posicion) 
@@ -32,7 +32,7 @@ var controller = {
                             con.query(sql2, function (err, result2) {
                                 if (err) {
                                     console.log(err);
-                                    res.send(err);
+                                    res.status(500).send(err);
                                 }
                             })
                         }
@@ -40,7 +40,9 @@ var controller = {
                             id: result.insertId,
                             nombre: req.body.nombre
                         }
-                        return res.send(req.body);
+                        return res.status(200).send({
+                            ok: true
+                        });
 
                     }
                 });
@@ -48,14 +50,48 @@ var controller = {
         })
     },
 
+    //Añade entrenamientos de Staff 
+    addTrainingStaff: function (req, res) {
+        let sql = `INSERT INTO training (fecha,sesion,duracion,idClub) 
+        VALUES ('${req.body.fecha}','${req.body.sesion}','${req.body.duracion}','${req.user.idClub}')`;
+        con.query(sql, function (err, result) {
+            if (err) {
+                console.log(err);
+                res.status(500).send({ error: err.message });
+            } else {
+                return res.status(200).send({
+                    ok: true
+                });
+            }
+        });
+
+    },
+    //Añade entrenamientos de Players 
+    addTrainingPlayer: function (req, res) {
+        const { idTraining, RPE, sleep, info } = req.body;
+        let sql = `INSERT INTO trainingReport (idTraining,RPE,sleep,info,idPersona) 
+        VALUES ('${idTraining}','${RPE}','${sleep}','${info}','${req.user.id}')`;
+        con.query(sql, function (err, result) {
+            if (err) {
+                console.log(err);
+                res.status(500).send(err);
+            } else {
+                return res.status(200).send({
+                    ok: true
+                });
+            }
+        });
+
+    },
+
     //Recoge los clubes de base de datos para mostrarlos en los registros
     getClub: function (req, res) {
         let sql = 'SELECT * from club';
         con.query(sql, function (err, result) {
             if (err) {
-                res.send(err);
+                res.status(500).send(err);
             } else {
-                res.send(result);
+                res.status(200).send(result);
             }
         });
     },
@@ -67,27 +103,24 @@ var controller = {
         AS P INNER JOIN jugador AS J ON P.idPersona= J.idPersona`;
         con.query(sql, function (err, result) {
             if (err) {
-                res.send(err);
+                res.status(500).send(err);
             } else {
-                res.send(result);
+                res.status(200).send({ result, ok: true });
             }
         });
     },
 
     //Trae los jugadores registrados en cada club en el crud
     getClubes: function (req, res) {
-
-
-
         let sql = `SELECT P.idPersona,P.nombre,P.apellidos,P.email,P.idClub,P.pais,P.rol
         ,J.altura, J.posicion,J.peso FROM persona 
         AS P INNER JOIN jugador AS J ON P.idPersona= J.idPersona 
         where idClub = '${req.query.id}'`;
         con.query(sql, function (err, result) {
             if (err) {
-                res.send(err);
+                res.status(500).send(err);
             } else {
-                res.send(result);
+                res.status(200).send({ result, ok: true });
             }
         });
     },
@@ -107,9 +140,9 @@ var controller = {
                 con.query(sql2, function (err, result) {
                     if (err) {
                         console.log(err);
-                        res.send(err);
+                        res.status(500).send(err);
                     } else {
-                        res.send(result);
+                        res.status(200).send({ result, ok: true });
                         console.log(result);
                     }
                 })
@@ -135,9 +168,9 @@ var controller = {
                 con.query(sql2, function (err, result) {
                     if (err) {
                         console.log(err);
-                        res.send(err);
+                        res.status(500).send(err);
                     } else {
-                        res.send(result);
+                        res.status(200).send({ result, ok: true });
                         console.log(result);
                     }
                 })
@@ -155,10 +188,10 @@ var controller = {
         con.query(sql, function (err, result) {
 
             if (err) {
-                res.send(err);
+                res.status(500).send(err);
             } else {
                 console.log(result);
-                res.render('modificar', {
+                res.status(200).render('modificar', {
                     resultado: result,
                 });
             }
@@ -167,7 +200,7 @@ var controller = {
 
     //Trae los datos del perfil de un jugador para mostrarlos en la vista del crud
     getPlayer: function (req, res) {
-            console.log(req.user)
+        console.log(req.user)
         let sql = `SELECT P.idPersona,P.nombre,P.apellidos,P.email,P.idClub,P.pais,P.rol
         ,P.fechaNacimiento,P.telefono,J.altura, J.posicion,J.peso FROM persona 
         AS P INNER JOIN jugador AS J ON P.idPersona= J.idPersona 
@@ -176,16 +209,82 @@ var controller = {
         con.query(sql, function (err, result) {
 
             if (err) {
-                res.send(err);
+                res.status(500).send(err);
             } else {
 
-                res.status(200).send(result);
-        }});
+                res.status(200).send({ result, ok: true });
+            }
 
+        });
+
+    },
+
+    //Trae los datos de los staff
+    getStaff: function (req, res) {
+        console.log(req.user)
+        let sql = `SELECT P.idPersona,P.nombre,P.apellidos,P.email,P.idClub,P.pais,P.rol
+        ,P.fechaNacimiento,P.telefono FROM persona 
+        AS P where P.idPersona = '${req.user.id}'`;
+
+        con.query(sql, function (err, result) {
+
+            if (err) {
+                res.status(500).send(err);
+            } else {
+
+                res.status(200).send({ result, ok: true });
+            }
+        });
+
+    },
+
+    //Trae los jugadores de cada club
+
+    getPlayerClub: function (req, res) {
+        let sql = `SELECT P.idPersona,P.nombre,P.apellidos,P.email,P.idClub,P.pais ,J.altura, J.posicion,J.peso 
+        FROM persona as P INNER JOIN jugador AS J ON P.idPersona=J.idPersona where 
+        idClub = '${req.user.idClub}' && rol = 2`;
+        con.query(sql, function (err, result) {
+            if (err) {
+                res.status(500).send(err);
+            } else {
+
+                res.status(200).send({ result, ok: true });
+            }
+        });
+    },
+
+    //Recoge los entrenos hechos por el admin para mostrarlos en los reportes de los jugadores
+
+    getTrainings: function (req, res) {
+        let sql = `SELECT idTraining, fecha,sesion,duracion FROM training 
+        WHERE idClub='${req.user.idClub}' AND idTraining NOT IN (SELECT idTraining FROM trainingReport WHERE idPersona = '${req.user.id}')`
+        con.query(sql, function (err, result) {
+            if (err) {
+                res.status(500).send(err);
+            } else {
+                res.status(200).send({ result, ok: true });
+
+            }
+        })
+    },
+
+    //Trae los reportes de los jugadores para la tabla del admin
+
+    getReportPlayer: function (req, res) {
+        let sql = `SELECT RPE, sleep,info, idPersona,fecha from trainingReport 
+        JOIN training ON trainingReport.idTraining = training.idTraining WHERE idPersona='${req.body.idPersona}'`
+        con.query(sql, function (err, result) {
+            if (err) {
+                res.status(500).send(err);
+            } else {
+                res.status(200).send({ result, ok: true });
+
+            }
+        })
     }
+
 }
-
-
 
 
 module.exports = controller;

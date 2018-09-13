@@ -7,7 +7,6 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
 import Email from "@material-ui/icons/Email";
-import People from "@material-ui/icons/People";
 // core components
 import Header from "components/Header/Header.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
@@ -36,16 +35,19 @@ class LoginPage extends React.Component {
         email: '',
         password: ''
       },
-  
+
       redirect: false
     };
   }
 
+ 
+  
+  
+
   onChange = e => {
-    console.log('aqui');
     this.setState({
       data: {
-     
+        ...this.state.data,
         [e.target.name]: e.target.value
       }
     });
@@ -60,16 +62,22 @@ class LoginPage extends React.Component {
       700
     );
   }
-  onClick = e => {
+  onSubmit = async e => {
 
-    axios.post({
-      url: `http://localhost:8000/users/loginPersona`,
-      data: this.state.data
-    })
+    e.preventDefault();
+    console.log(this.state.data);
+    const url = `http://localhost:8000/users/loginPersona`;
+
+     await axios.post(url,this.state.data)
       .then(response => {
-        this.setState({ redirect: true });
+        localStorage.setItem('token',response.data.token);
+      if(response.status !== 401)
+        this.setState(
+          ...this.state.data,
+          { redirect: true });
+
       })
-      .catch(error => console.log(error.response));
+      .catch(error => console.log(error));
 
   };
 
@@ -79,65 +87,65 @@ class LoginPage extends React.Component {
     const { redirect } = this.state;
     return (
       <div>
-      {redirect ? (
+        {redirect ? (
           <Redirect to='/profile-player' />
         ) : (
-          <div>
-            <Header
-              absolute
-              color="transparent"
-              brand="Load Control"
-              rightLinks={<HeaderLinks />}
-              {...rest}
-            />
-            <div
-              className={classes.pageHeader}
-              style={{
-                backgroundImage: "url(" + image + ")",
-                backgroundSize: "cover",
-                backgroundPosition: "top center"
-              }}
-            >
-              <div className={classes.container}>
-                <GridContainer justify="center">
-                  <GridItem xs={12} sm={12} md={4}>
-                    <Card className={classes[this.state.cardAnimaton]}>
-                      <form  className={classes.form}>
-                        <CardHeader color="danger" className={classes.cardHeader}>
-                          <h4>Login</h4>
-                          <div className={classes.socialLine}>
-                            <Button
-                              justIcon
-                              href="#pablo"
-                              target="_blank"
-                              color="transparent"
-                              onClick={e => e.preventDefault()}
-                            >
-                              <i className={"fab fa-twitter"} />
-                            </Button>
-                            <Button
-                              justIcon
-                              href="#pablo"
-                              target="_blank"
-                              color="transparent"
-                              onClick={e => e.preventDefault()}
-                            >
-                              <i className={"fab fa-facebook"} />
-                            </Button>
-                            <Button
-                              justIcon
-                              href="#pablo"
-                              target="_blank"
-                              color="transparent"
-                              onClick={e => e.preventDefault()}
-                            >
-                              <i className={"fab fa-google-plus-g"} />
-                            </Button>
-                          </div>
-                        </CardHeader>
-                        <p className={classes.divider}></p>
-                        <CardBody>
-                          {/* <CustomInput
+            <div>
+              <Header
+                absolute
+                color="transparent"
+                brand="Load Control"
+                rightLinks={<HeaderLinks />}
+                {...rest}
+              />
+              <div
+                className={classes.pageHeader}
+                style={{
+                  backgroundImage: "url(" + image + ")",
+                  backgroundSize: "cover",
+                  backgroundPosition: "top center"
+                }}
+              >
+                <div className={classes.container}>
+                  <GridContainer justify="center">
+                    <GridItem xs={12} sm={12} md={4}>
+                      <Card className={classes[this.state.cardAnimaton]}>
+                        <form onSubmit={this.onSubmit} className={classes.form}>
+                          <CardHeader color="danger" className={classes.cardHeader}>
+                            <h4>Login</h4>
+                            <div className={classes.socialLine}>
+                              <Button
+                                justIcon
+                                href="#pablo"
+                                target="_blank"
+                                color="transparent"
+                                onClick={e => e.preventDefault()}
+                              >
+                                <i className={"fab fa-twitter"} />
+                              </Button>
+                              <Button
+                                justIcon
+                                href="#pablo"
+                                target="_blank"
+                                color="transparent"
+                                onClick={e => e.preventDefault()}
+                              >
+                                <i className={"fab fa-facebook"} />
+                              </Button>
+                              <Button
+                                justIcon
+                                href="#pablo"
+                                target="_blank"
+                                color="transparent"
+                                onClick={e => e.preventDefault()}
+                              >
+                                <i className={"fab fa-google-plus-g"} />
+                              </Button>
+                            </div>
+                          </CardHeader>
+                          <p className={classes.divider}></p>
+                          <CardBody>
+                            {/* <CustomInput
                         
                         labelText="Nombre..."
                         id="nombre"
@@ -153,61 +161,61 @@ class LoginPage extends React.Component {
                           )
                         }}
                       /> */}
-                          <CustomInput
+                            <CustomInput
 
-                            labelText="Email..."
-                            id="email"
-                            name='email'
-                            formControlProps={{
-                              fullWidth: true
-                            }}
-                            onChange={this.onChange}
-                            inputProps={{
-                              type: "email",
-                              endAdornment: (
-                                <InputAdornment position="end">
-                                  <Email className={classes.inputIconsColor} />
-                                </InputAdornment>
-                              )
-                            }}
-                          />
-                          <CustomInput
+                              labelText="Email..."
+                              id="email"
+                              name='email'
+                              formControlProps={{
+                                fullWidth: true
+                              }}
+                              onChangeInput={this.onChange}
+                              inputProps={{
+                                type: "email",
+                                endAdornment: (
+                                  <InputAdornment position="end">
+                                    <Email className={classes.inputIconsColor} />
+                                  </InputAdornment>
+                                )
+                              }}
+                            />
+                            <CustomInput
 
-                            labelText="Contraseña"
-                            id="password"
-                            name='password'
-                            formControlProps={{
-                              fullWidth: true
-                            }}
-                            onChange={this.onChange}
-                            inputProps={{
-                              type: "password",
-                              endAdornment: (
-                                <InputAdornment position="end">
-                                  <Icon className={classes.inputIconsColor}>
-                                    lock_outline
+                              labelText="Contraseña"
+                              id="password"
+                              name='password'
+                              formControlProps={{
+                                fullWidth: true
+                              }}
+                              onChangeInput={this.onChange}
+                              inputProps={{
+                                type: "password",
+                                endAdornment: (
+                                  <InputAdornment position="end">
+                                    <Icon className={classes.inputIconsColor}>
+                                      lock_outline
                               </Icon>
-                                </InputAdornment>
-                              )
-                            }}
-                          />
-                          
-                        </CardBody>
-                        <CardFooter className={classes.cardFooter}>
-                          <Button onClick={this.onClick} simple color="danger" size="lg">
-                            Iniciar Sesion
+                                  </InputAdornment>
+                                )
+                              }}
+                            />
+
+                          </CardBody>
+                          <CardFooter className={classes.cardFooter}>
+                            <Button type="submit" simple color="danger" size="lg">
+                              Iniciar Sesion
                       </Button>
-                        </CardFooter>
-                      </form>
-                    </Card>
-                  </GridItem>
-                </GridContainer>
+                          </CardFooter>
+                        </form>
+                      </Card>
+                    </GridItem>
+                  </GridContainer>
+                </div>
               </div>
+              <Footer />
             </div>
-            <Footer />
-          </div>
           )}
-          </div>
+      </div>
     );
   }
 }

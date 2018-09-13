@@ -7,32 +7,38 @@ require('dotenv').config();
 var login = {
     loginPersona: function (req, res) {
         const { email, password } = req.body;
-
-        let sql = `SELECT * from persona where email ='${req.body.email}'  `;
+        console.log(email);
+        let sql = `SELECT * from persona where email ='${email}'  `;
         con.query(sql, function (err, result) {
             if (err) {
                 return res.send(err);
             } else {
                 if (result == "") {
-                    return res.send('Email introducido no válido');
+                    return res.status(401).send({ error: 'Algunos de tus datos no son correctos' });
                 } else {
-                    bcrypt.compare(req.body.password, result[0].password, function (err, iguales) {
+                    bcrypt.compare(password, result[0].password, function (err, iguales) {
                         if (err) {
                             return res.send(err)
                         } else {
                             if (iguales) {
-                                jwt.sign({id: result[0].idPersona, email, password },process.env.COOKIE_SECRET, { expiresIn: '2h' }, (error, TOKEN) => {
-                                    console.log(error);
-                                    if (error) return res.status(500).json({ error: 'ERROR SIGNING THE TOKEN' });
-                                    res.cookie('access_token', TOKEN, {
-                                        maxAge: new Date(Date.now() + 1000000),
-                                        httpOnly: false,
+                                jwt.sign({ id: result[0].idPersona, email, rol: result[0].rol, idClub: result[0].idClub, nombre: result[0].nombre }, process.env.COOKIE_SECRET,
+                                    { expiresIn: '2h' }, (error, TOKEN) => {
+                                        if (error) return res.status(500).json({ error: 'ERROR SIGNING THE TOKEN' });
+                                        res.cookie('access_token', TOKEN, {
+                                            maxAge: new Date(Date.now() + 1000000),
+                                            httpOnly: false,
+                                        });
+
+
+                                        return res.status(200).send({
+                                            message: 'User logged with success',
+                                            idClub: result[0].idClub,
+                                            nombre: result[0].nombre,
+                                            rol: result[0].rol
+                                        });
                                     });
-                                    console.log(result);
-                                    return res.status(200).json({ message: 'User logged with success' });
-                                });
                             } else {
-                                return res.send('La contraseña no es correcta')
+                                return res.status(401).send({ error: 'Algunos de tus datos no son correctos' })
                             };
                         };
                     });
@@ -40,6 +46,14 @@ var login = {
             };
         });
     },
+    status: function (req, res) {
+
+        return res.status(200).send({ message: 'ok', idClub: req.user.idClub, rol: req.user.rol, nombre: req.user.nombre });
+    },
+    logout: function (req, res) {
+        res.clearCookie("access_token");
+        return res.status(200).send({ message: 'ok', rol: req.user.rol });
+    }
 };
 
 

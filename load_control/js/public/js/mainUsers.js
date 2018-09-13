@@ -30,12 +30,12 @@ $(document).ready(function() {
 
     botonclub.on('click', function() {
         let data = $('#formularioclub').serialize();
-        $.post('http://localhost:3000/club/add', data, function(formulario) {
+        $.post('http://localhost:8000/club/add', data, function(formulario) {
 
         });
     });
 
-    $.get('http://localhost:3000/club/', function(club) {
+    $.get('http://localhost:8000/club/', function(club) {
         club.forEach(club => {
             lista.append('<option value="' + club.idClub + '" class="clubes" id="' + club.idClub + '">' + club.nombre);
             lista2.append('<option value="' + club.idClub + '" class="clubes" id="' + club.idClub + '">' + club.nombre);
@@ -46,7 +46,7 @@ $(document).ready(function() {
     td.on('click', '.eliminarplayer', function() {
         let id = $(this).parent().parent().attr('id');
         $(this).parent().parent().remove();
-        $.post('http://localhost:3000/persona/delete', { id: id }, function(jugador) {
+        $.post('http://localhost:8000/persona/delete', { id: id }, function(jugador) {
 
         });
     });
@@ -55,7 +55,7 @@ $(document).ready(function() {
         var club = $(this).attr('id')
         let clear = $('#listadocrud tr');
         clear.remove();
-        $.get('http://localhost:3000/persona/clubes', { id: club }, function(jugador) {
+        $.get('http://localhost:8000/persona/clubes', { id: club }, function(jugador) {
             console.log(jugador);
 
             jugador.forEach(jugador => {
@@ -87,7 +87,7 @@ $(document).ready(function() {
     $('#modificar').on('click', function() {
         let formModificado = $('#modificaplayer').serialize();
         console.log(formModificado);
-        $.post('http://localhost:3000/jugador/modificar', formModificado, function(jugador) {});
+        $.post('http://localhost:8000/jugador/modificar', formModificado, function(jugador) {});
 
 
     });
